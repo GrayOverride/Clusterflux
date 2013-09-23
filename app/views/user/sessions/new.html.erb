@@ -1,0 +1,10 @@
+<div class="span2"></div>
+<div id="cont" class="span8"><h2>Log in</h2>
+
+	<%= form_tag(user_log_in_path, :method => :post) do %>
+	<%= text_field_tag :creds, params[:creds], :class =>'input-small', :placeholder=>'Email' %>
+	<%= password_field_tag :password, nil, :class =>'input-small', :placeholder=>'Password' %>
+	<%= submit_tag "Login" %>
+	<% end %>
+</div>
+<div class="span2"></div>

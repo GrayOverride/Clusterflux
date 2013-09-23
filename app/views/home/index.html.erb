@@ -1,0 +1,68 @@
+<div class="span2"></div>
+<div class="span8 visible-desktop">
+
+<div class="promo span3">
+  <div class="deal">
+    <span>Register</span>
+    <span>Become a duelist.</span>
+  </div>
+  <span class="price"><span class="price"><%= link_to "Register", user_register_path, :class=>"btn btn-small btn-info" %></span></span>
+  <ul class="features">
+    <li>Register to start building your own deck and make a name for yourself.</li>
+    <li></li>
+    <li></li>   
+  </ul>
+</div>  
+
+<div class="promo scale span6">
+  <div class="deal">
+    <span>CLUSTERFLUX</span>
+    <span>The Awesome online cardgame.</span>
+  </div>
+  <span class="price"><h6><%= link_to "Play Now", game_servers_path, :class=>"btn btn-large btn-success" %></h6></span>
+  <ul class="features">
+    <li>Duel your friends online with the help of mutated monsters, lumbering metal machines and cosmic horrors in the battle for control over the Flux.</li>
+    <li></li>
+    <li></li>   
+  </ul>
+</div>
+
+<div class="promo span3">
+  <div class="deal">
+    <span>Socialize</span>
+    <span>Like and share us.</span>
+  </div>
+  <span class="price"><div class="fb-like" data-href="https://www.facebook.com/digitaldeadlock?fref=ts" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div></span>
+  <ul class="features">
+    <li>Show that you play Clusterflux, tell you friends and challenge them.</li>
+    <li></li>
+    <li></li>   
+  </ul>
+</div>  
+</div>
+
+<div class="span6 hidden-desktop">
+<div class="promo">
+  <div class="deal">
+    <span>CLUSTERFLUX</span>
+    <span>The Awesome online cardgame.</span>
+  </div>
+  <span class="price"><h6><%= link_to "Play Now", game_servers_path, :class=>"btn btn-large btn-success" %></h6></span>
+  <ul class="features">
+    <li>Register and make your own deck <span class="price"><%= link_to "Register", user_register_path, :class=>"btn btn-small btn-info" %></span></li>
+    <li></li>
+    <li>Like us <span class="price"><div class="fb-like" data-href="https://www.facebook.com/digitaldeadlock?fref=ts" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div></span></li>   
+  </ul>
+</div>
+</div>
+
+<div class="span2"><div class="alert alert-info visible-desktop">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Update news</h4>
+		<% @admin_updates.each do |admin_update| %>
+			<b><%= admin_update.title %></b><br/><%= admin_update.desc %><br/><h6><%= admin_update.created_at %></h6>
+		<% end %>
+	</div>
+</div>
+
+

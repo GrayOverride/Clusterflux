@@ -1,0 +1,14 @@
+<div class="span2"></div>
+<div id="cont" class="span8"><h3>Account Information</h3>
+	<div class="well">
+		<h2><%= @user.username %></h2>
+		<p>
+			<%= @user.email %>
+			<br />
+			Registered at
+			<%= @user.created_at.to_formatted_s(:long) %><br /><br />
+			<%= link_to "Edit", user_edit_path(@user.id), :class=>"btn btn-inverse"  %>
+			<%= link_to "Delete account", user_path(@user.id), :class=>"btn btn-inverse" , confirm: "Are your sure?", method: :delete %>
+		</p>
+	</div></div>
+<div class="span2"></div>

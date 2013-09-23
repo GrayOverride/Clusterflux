@@ -1,0 +1,10 @@
+development:
+  server: "http://localhost:9292/faye"
+  secret_token: "secret"
+test:
+  server: "http://localhost:9292/faye"
+  secret_token: "secret"
+production:
+  server: "http://digitaldeadlock.com:9292/faye"
+  secret_token: "a4013af7c6dcc617f06a8252fa2993acbf741803b71bfbd2eef9ab9d7c735e2b"
+  signature_expiration: 3600 # one hour

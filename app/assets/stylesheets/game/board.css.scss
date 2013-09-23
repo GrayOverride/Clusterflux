@@ -1,0 +1,303 @@
+h1, h2, h3, h4, h5, h6{
+  color: white;
+ 
+  letter-spacing: 1px;
+}
+
+#board-body{
+  background: transparent url('back_game.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#board{
+  margin-top: 1%;
+}
+
+#opponent-side{
+  margin-top: 2%;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #E3E3E3;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  -webkit-box-shadow: none;
+  border-radius: 3px;
+}
+
+#player-side{
+  padding: 0 0.5em 0.5em 0.5em;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #E3E3E3;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  -webkit-box-shadow: none;
+  border-radius: 3px;
+}
+
+div.energy-counter{
+  margin-top: 1%;
+  min-height: 0 !important;
+}
+
+div.energy-counter div{
+  min-height: 0 !important;
+}
+
+div.energy-counter div h4{
+  margin: 0 !important;
+}
+
+#messenger{
+  padding: 1em 0em 1em 1em;
+}
+
+#chat {
+  overflow: auto;
+  height: 100px;
+  margin-bottom: 2px;
+}
+
+#chat p {
+  font-size: 0.9em;
+  line-height: 1em;
+  margin: 0 0 5px 0;
+}
+
+#button-row{
+  margin-top: 5%;
+}
+
+#ready{
+  padding: 20px;
+  font-size: 2em;
+}
+
+.card-btn{
+  margin: 0 auto;
+  width: 100%;
+  height: 2em;
+  line-height: 1em;
+  padding: 0;
+}
+
+#flip-card{
+  z-index: 50;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 2em;
+}
+
+#deploy-card{
+  z-index: 50;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 2em;
+}
+
+.slot-wrapper{
+  display: inline-block;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.slot-wrapper:after{
+  padding-top: 141.5525114155251%;
+  display: block;
+  content: '';
+}
+
+.slot{
+  position: absolute;
+  top: 0; bottom: 0; right: 0; left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.well{
+  padding: 0.4em;
+  margin-bottom: 0;
+}
+
+.card-attrib{
+  display: none;
+}
+
+.select-outline {
+	box-shadow: 0 0 0.3em 0.3em white;
+  -webkit-box-shadow: none;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+ 	transition: all 0.1s ease-in-out;
+}
+.select-enemy-outline{
+  box-shadow: 0 0 0.3em 0.3em red;
+  -webkit-box-shadow: none;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.popover{
+  padding: 0 0.5em 0.5em 0.5em;
+  background: rgba(0, 20, 40, 0.95);
+  border: 1px solid #E3E3E3;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+  -webkit-box-shadow: none;
+  border-radius: 3px;
+  color: white;
+}
+
+.popover-title{
+  border: none
+}
+
+.popover-content{
+  min-width:150px;
+}
+
+.ulpop{
+    list-style:none;
+    margin: 0;
+    font-size: 12px;
+}
+
+.ulpop li{
+    line-height: 14px;
+}
+
+.effectbox{
+  padding: 5px;
+  margin-bottom: 5px;
+  min-height: 20px;
+  box-shadow: inset 0 0 2px 2px #888;
+  -moz-box-shadow: inset 0 0 2px 2px #888;
+  -webkit-box-shadow: none;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.effectbox h6{
+  margin: 0 !important;
+}
+
+div.player-card:nth-child(6n+7)  {
+  margin-left: 0;
+  clear: left;
+}
+
+div#player-hand div.player-card{
+  margin-top: 5px;
+}
+
+div#opponent-hand div.op-card:nth-child(6n+7)  {
+  margin-left: 0;
+  clear: left;
+}
+
+div#opponent-hand div.op-card{
+  margin-top: 5px;
+}
+
+div.turn-enable{
+  color:white;
+  margin-bottom: 5px;
+}
+
+div.turn-phases{
+  display: inline-block;
+  border-radius: 6px 6px 6px 6px;
+  background-image: linear-gradient(to bottom, rgba(98, 196, 98, 1), rgba(81, 163, 81, 0.6));
+  transform: skew(20deg);
+  -o-transform: skew(20deg);
+  -moz-transform: skew(20deg);
+  -webkit-transform: skew(20deg);
+}
+
+div.turn-phases span{
+  display: inline-block;
+  padding: 0.4em;
+  margin: 0 !important;
+  width: 20% !important;
+  text-align: center;
+}
+
+.slant-void{
+  transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+}
+
+div.turn-phases-disabled{
+  background-image: linear-gradient(to bottom, rgba(238, 95, 91, 1), rgba(189, 54, 47, 0.6));
+}
+
+div.turn-phases-disabled span{
+  width: 100% !important;
+}
+
+#not-my-turn{
+  display: none;
+}
+
+.phase-active{
+  color:white;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(100, 100, 100, 0.1));
+}
+
+.phase-passed{
+  color:white;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(100, 100, 100, 0.1));
+}
+
+.unpowered{
+  opacity: 0.5;
+}
+
+div.apprise-overlay{
+  z-index: 1200;
+}
+
+div.apprise{
+  z-index: 1500;
+}
+
+.popover-title{
+  background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.dismiss-pop{
+  background: rgba(250, 250, 250, 1) !important;
+  border: 2px solid white !important;
+  border-radius:80px;
+  padding-left:5px !important;
+  padding-right:5px !important;
+}
+
+//remove box shadow from elements, it causes lag in webkit browsers...
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+/* CSS Statements that only apply on webkit-based browsers (Chrome, Safari, etc.) */
+  .effectbox{
+    outline: 1px dotted white;
+  }
+
+  .select-outline {
+    outline: 0.2em solid white;
+  }
+
+  .select-enemy-outline {
+    outline: 0.2em solid red;
+  }
+
+  .popover{
+    outline: 1px solid white;
+  }
+
+  #board-body{
+    background-attachment: scroll;
+    background-repeat: repeat-y;
+  }
+} 

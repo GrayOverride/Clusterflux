@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Clusterflux </title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= analytics_init if Rails.env.production? %>
+	<%= yield(:head) %> 
+	<%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body id="public-body">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div class="container-fluid content">
+		<div class="navbar navbar-inverse row-fluid ">
+			<div class="navbar-inner ">
+				<div id="logo" class="visible-desktop brand "><%= image_tag("logo.png", :alt => "Clusterflux", :size => "96x96") %></div>
+				<ul class="nav">
+					<li><%= link_to "Home", root_path %></li>
+					<li><%= link_to "Servers", game_servers_path %></li>
+					<li><%= link_to "Learn to play", home_tutorial_path %></li>
+					<% if @current_user %>
+						<li>
+							<%= link_to "My decks", user_decks_path %>
+						</li>
+					<% end %>
+				</ul>
+				
+				<%= link_to "Take Survey", "https://docs.google.com/forms/d/1-WLtK2rQvIkYO5psA3hzwYs-I6pUUc5mc7mdVpTKBmE/viewform", :class => "btn btn-info" %>
+				
+				<% if @current_user %>
+					<%= form_tag(user_log_out_path, :method => :get, :class=>"pull-right form-inline", :id => "log-in-form") do %>
+						<label class="checkbox"><div id="login-name"><%= @current_user.username %> </div></label>
+						<input type="submit" value="Logout" class="btn btn-danger"/>
+					<% end %>
+				<% else %>
+					<div class="pull-right form-inline">
+						<%= form_tag(user_log_in_path, :method => :post, :class=>"form-inline", :id => "log-in-form") do %>
+							<%= text_field_tag :creds, params[:creds], :class =>'input-small', :placeholder=>'Username' %>
+							<%= password_field_tag :password, nil, :class =>'input-small', :placeholder=>'Password' %>
+							<%= submit_tag "Login", :class=>"btn btn-success" %>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<div class="container-fluid ">
+			<div class="row-fluid">
+				<%= yield %> 
+			</div>
+		</div>
+	</div>
+</body>
+</html>

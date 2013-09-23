@@ -1,0 +1,32 @@
+<div class="span3"></div>
+<div class="span6 promo">
+	<div class="deal">
+		<span>Registration</span>
+		<span>Enter your email and a username to register.</span>
+	</div>
+	<span class="price">
+		<% if @user.errors.any? %>
+		<div class="error_messages ">
+			<ul class="unstyled">
+				<% for message in @user.errors.full_messages %>
+				<li class="text-error"><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+		<% end %>
+		<%= form_for(@user, :as => :user, :url => user_register_path, :class => "span2") do |f| %>
+		<div class="text-center form-inline">
+			<%= f.text_field :email, :class =>'input-small', :placeholder=>'Email' %>
+			<%= f.text_field :username, :class =>'input-small', :placeholder=>'Username' %>
+			<%= f.password_field :password, :class =>'input-small', :placeholder=>'Password' %>
+			<%= f.submit "Register", :class=>"btn btn-success" %>
+		</div>
+		<% end %>
+	</span>
+	<ul class="features">
+		<li>Registering a username is completly free and allows other players to see which servers you have created. </li>
+	</ul>
+</div>
+
+
+<div class="span3"></div>

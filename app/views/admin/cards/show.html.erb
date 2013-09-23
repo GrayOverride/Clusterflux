@@ -1,0 +1,28 @@
+<div class="span2"></div>
+<div class="span8">
+	<h1><%= @card.name %></h1>
+	<div class="span4">
+		<%= image_tag @card.avatar %>
+	</div>
+	<div class="span4 well">
+		<table class="table table-striped table-condensed table-hover">
+			<tr>
+				<td><b>Attack </b></td>
+				<td><%= @card.atk %></td>
+			</tr>
+			<tr>
+				<td><b>Defence </b></td>
+				<td><%= @card.def %></td>
+			</tr>
+			<tr>
+				<td><b>Upkeep </b></td>
+				<td><%= @card.upkeep %></td>
+			</tr>
+			<tr>
+				<td><b>Energy </b></td>
+				<td><%= @card.energy %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<div class="span2"></div>

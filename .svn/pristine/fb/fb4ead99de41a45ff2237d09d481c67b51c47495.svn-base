@@ -1,0 +1,35 @@
+@import "bootstrap/bootstrap";
+@import "bootstrap/responsive";
+@import "home.css.scss";
+@import "user/decks.css.scss";
+@import "game/servers.css.scss";
+html{
+	background:transparent;
+}
+h1, h2, h3, h4, h5, h6{
+	color: #3F3F3F;
+	text-shadow: -1px 0 0px lightblue, 0 1px 0px lightblue, 1px 0 0px lightblue, 0 -1px 0px lightblue;
+	letter-spacing: 1px;
+}
+.navbar .brand {
+    max-height: 40px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+#cont{
+	
+}
+#admin_cont{
+	margin:80px 0px;
+}
+#startup{
+	text-align:center;
+}
+.dark-table{
+	background: rgba(0, 0, 0, 0.6);
+	font-color:white;
+}
+.sld{
+	text-align:center;
+}

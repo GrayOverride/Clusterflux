@@ -1,0 +1,12 @@
+<div class="span2"></div>
+<div class="span8">
+	<h2>Admin Login</h2>
+		<%= form_tag(admin_log_in_path, :method => :post) do %>
+			<%= text_field_tag :username, params[:username], :class =>'input-small', :placeholder=>'Email'  %>
+			<div>
+				<%= password_field_tag :password,nil,:class =>'input-small', :placeholder=>'Password' %><br />
+				<%= submit_tag "Login", :class=>"btn btn-inverse" %>
+			</div>
+		<% end %>
+</div>
+<div class="span2"></div>

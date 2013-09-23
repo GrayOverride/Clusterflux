@@ -1,0 +1,45 @@
+<% content_for(:head) do %>
+<%= javascript_include_tag 'game/apprise-v2.min.js' %>
+<%= stylesheet_link_tag 'game/apprise-v2.min.css.scss', :media => "all"  %>
+<% end %>
+
+<div class="span2"></div>
+<div id="cont" class="span8 promo">
+	<div class="row-fluid">
+		<div class="deal price">
+    		<span>Server browser</span>
+    		<span>Join servers or host your own.</span>
+  		</div>
+		<span class="form-inline">
+			<%= link_to "Create", new_game_server_path, :id => "create-game", :class => "btn btn-success" %>
+
+			<%= select_tag "deck", options_from_collection_for_select(@decks, "id", "name"), :prompt => "Select a deck", :class => "input-medium" %>
+		</span>
+	</div>
+	<table id="server-table" class="table table-condensed  dark-table">
+		<th>Name</th>
+		<th>Creator</th>
+		<th><div id="loading-div"><img src="/assets/loading.gif" alt="Loading..." class="loading-gif" /></div></th>
+		<% @servers.each do |server| %>
+		<tr id="<%= server.key %>">
+			<td><%= server.name %></td>
+			<% if server.user_id.blank? %>
+			<td><%= server.username %></td>
+			<% else %>
+			<td><%= server.user.username %></td>
+			<% end %>
+			<td><%= link_to "Join", "javascript:void(0)", :data => {:url =>  game_join_path(server.key)}, :class=>"btn btn-inverse join-btn" %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+<div class="span2">
+	<div class="alert alert-danger visible-desktop">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<h4>Note:</h4>
+		<p>Trying to refresh or leave the server during gameplay will disconnect you and forfeit the game.</p>
+	</div>
+</div>
+
+<%= subscribe_to "/servers/new" %>
+<%= subscribe_to "/servers/remove" %>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clusterflux</title>
+  <%= stylesheet_link_tag    "game_application", :media => "all" %>
+  <%= javascript_include_tag "main_board" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="board-body">
+	<div class="container-fluid">
+		<%= yield %>
+	</div>
+</body>
+</html>

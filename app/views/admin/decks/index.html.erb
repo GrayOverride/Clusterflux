@@ -1,0 +1,27 @@
+<div class="span2"></div>
+<div id="cont" class="span8">
+	<h1>Decks</h1>
+	<%= link_to "Create", new_admin_deck_path, :class=>"btn btn-primary" %>
+	<table class="table table-condensed table-striped table-hover well">
+		<th>Name</th>
+		<th></th>
+		<% @decks.each do |deck| %>
+		<tr>
+			<td><%= link_to deck.name, admin_deck_path(deck.id) %></td>
+			<td>
+				<div class="btn-group">
+					<button class="btn dropdown-toggle btn-inverse" data-toggle="dropdown">
+						Action
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><%= link_to "Edit", edit_admin_deck_path(deck.id) %></li>
+						<li><%= link_to 'Destroy', admin_deck_path(deck.id), confirm: 'Are you sure?', :method => :delete %></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+<div class="span2"></div>

@@ -1,0 +1,14 @@
+<%= form_for(@type, :url => @path) do |f| %>
+	<% if @type.errors.any? %>
+		<div class="error_messages">
+			<h3>Submission failed</h3>
+			<ul>
+				<% for message in @type.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<%= f.text_field :name, :class =>'input-small', :placeholder=>'Name' %>
+	<%= f.submit "Submit", :class=>"btn btn-inverse" %>
+<% end %>

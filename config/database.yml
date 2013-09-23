@@ -1,0 +1,29 @@
+development:
+  adapter: postgresql
+  database: main
+  username: monitor
+  password: massekaffe
+  host: localhost
+  port: 5433
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: main
+  username: monitor
+  password: massekaffe
+  host: localhost
+  port: 5433
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  database: main
+  username: monitor
+  password: massekaffe
+  host: localhost
+  port: 5432
+  pool: 15
+  timeout: 5000

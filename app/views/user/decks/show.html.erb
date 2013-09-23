@@ -1,0 +1,39 @@
+<div class="span2"></div>
+<div id="cont" class="span8">
+	<h2><%= @deck.name %></h2>
+	<%= link_to "Decks", user_decks_path, :class=>"btn btn-inverse" %>
+	<%= link_to "Edit", edit_user_deck_path(@deck), :class=>"btn btn-primary" %>
+	<ul class="thumbnails well" id="available">
+		<li class="span4" data-cid="<%= @hq.id %>">
+				<div class="thumbnail">
+					<%= image_tag @hq.avatar.url %>
+					<table class="table table-hover table-condensed">
+						<tr><td><b><%= @hq.name %> - <%= @hq.faction.name %></b></td><td></td></tr>
+						<tr><td>Attack</td><td><%= @hq.atk %></td></tr>
+						<tr><td>Defence</td><td><%= @hq.def %></td></tr>
+						<tr><td>Flux</td><td><%= @hq.energy %></td></tr>
+						<tr><td>Upkeep</td><td><%= @hq.upkeep %></td></tr>
+					</table>
+				</div>
+			</li>
+		<% @cards.each_with_index do |card, index| %>	
+			<li class="span4" data-cid="<%= card.id %>">
+				<div class="thumbnail">
+					<%= image_tag card.avatar.url %>
+					<table class="table table-hover table-condensed">
+						<tr><td><b><%= card.name %> - <%= card.faction.name %></b></td><td></td></tr>
+						<tr><td>Attack</td><td><%= card.atk %></td></tr>
+						<tr><td>Defence</td><td><%= card.def %></td></tr>
+						<tr><td>Flux</td><td><%= card.energy %></td></tr>
+						<tr><td>Upkeep</td><td><%= card.upkeep %></td></tr>
+						<tr><td>Probe effect</td><td></td></tr>
+						<tr><td colspan="2"><%=raw effect_builder(card.scout) %></td></tr>
+						<tr><td>Flip effect</td><td></td></tr>
+						<tr><td colspan="2"><%=raw effect_builder(card.flip) %></td></tr>
+					</table>
+				</div>
+			</li>
+		<% end %>
+	</ul>
+</div>
+<div class="span2"></div>

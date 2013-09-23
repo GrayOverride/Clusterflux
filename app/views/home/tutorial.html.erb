@@ -1,0 +1,131 @@
+<div class="span2"></div>
+
+<div class="span8">
+
+<div id="myCarousel" class="carousel slide hidden-phone">
+  <ol class="">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
+  </ol>
+  <!-- Carousel items -->
+  <div class="carousel-inner promo">
+  	<div class="active item">
+    	<div class="span1"></div>
+    	<div class="span6 "><%= image_tag("intro.png", :size => "500x25") %></div>
+    	<div class="span3 "><h4>Learn to play</h4><p>This tutorial will teach you the basics of Clusterflux in 5 easy steps. These steps can be brought up any time during gameplay and on the game board you can get additional hints by clicking 'help'.
+    	</p></div>
+    	<div class="span2"></div>
+    </div>
+    <div class="item">
+    	<div class="span1"></div>
+    	<div class="span6 well"><%= image_tag("item3.png", :size => "500x25") %></div>
+    	<div class="span3 "><h4>Placement</h4><p>When you want to place a card on the battlefield you need to have the card´s upkeep in mind. The combined upkeep of all the cards on the field can not exceed your maximum flux capacity. <br/><br/>
+    	If the maximum flux capacity is to low to support such a card, it is considered 'Collapsed' and can not attack/entrench or use effects. The card can be placed face-up for attack or face-down for effects.  
+
+    	</p></div>
+    	<div class="span2"></div>
+    </div>
+    <div class="item">
+    	<div class="span1"></div>
+    	<div class="span6 well"><%= image_tag("item2.png", :size => "500x25") %></div>
+    	<div class="span3 "><h4>Flipping</h4><p>When a unit card has survived one turn on the field face-down it can be flipped. If it has a flip effect it is activated automatically.
+    	</p></div>
+    	<div class="span2"></div>
+    </div>
+    <div class="item">
+    	<div class="span1"></div>
+    	<div class="span6 well"><%= image_tag("item1.png", :size => "500x25") %></div>
+    	<div class="span3 "><h4>Entrench</h4><p>To entrench a unit and expand your maximum flux capacity, simply click the card and then an empty slot in your trench.<br/><br/>This must be done in the entrench phase.<br/><br/>
+    	Once a unit card has been put in the trench it can not be retrieved to the battlefield in any way.</p></div>
+    	<div class="span2"></div>
+    </div>
+    <div class="item">
+    	<div class="span1"></div>
+    	<div class="span5 well"><%= image_tag("item4.png", :size => "500x25") %></div>
+    	<div class="span4 "><h4>Combat</h4><p>The most important thing in combat is that if your units attack is higher than the target units defense (after modifiers) the opponents unit is destroyed. If your attack isn't strong enough to penetrate the defense your unit is destroyed instead.<br/><br/><b>Type A:</b> Click your unit, then select your opponents face-down card, press 'add to plan' and finally attack. This is called a probe-attack, if the enemy unit have any probe effect it is activated. Then battle is calculated as normal.
+    	<br/><br/><b>Type B:</b> Click your attacking unit, select your opponents card, then press 'add to plan' and finally attack. Battle is calculated as normal.
+    	
+    	</p></div>
+    	<div class="span2"></div>
+    </div>
+    <div class="item">
+    	<div class="span1"></div>
+    	<div class="span6 well"><%= image_tag("item5.png", :size => "500x25") %></div>
+    	<div class="span3 "><h4>Piercing</h4><p>When declaring a Type 2 attack you have the option to select an additional entrenched card on your opponents side of the battlefield -now, if you manage to destroy your opponents unit the charge will continue onto that trench card. The opposing units defense is subtracted from your unit cards attack and what remains is calculated against the entrenched cards defense.
+        When a player have no Flux left he/she has lost the game.
+    	</p></div>
+    	<div class="span2"></div>
+    </div>
+    <div class="item">
+    	<div class="span1"></div>
+    	<div class="span6 ">
+    		<h4>Phases</h4>
+    		<ul>
+    			<li>Draw phase - You automatically draw a card from your deck.</li>
+    			<li>Entrench phase - Decide if you want to entrench any of your units.</li>
+    			<li>Flip phase - Decide which face-down cards to flip.</li>
+    			<li>Deploy phase - Place new units.</li>
+    			<li>Combat phase - Declare attacks.</li>
+    			<li>End phase - End your turn.</li>
+    		</ul>
+		</div>
+		<div class="span3 "><br/><br/><br/><p>There are a fixed number of phases for every turn of the game. If you attempt to perform an action in the wrong phase it might not get recognized or it may skip some of the phases you missed, therefore it is important to know the order of the phases.
+    	</p></div>
+    	
+    	<div class="span2"></div>
+    </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+
+
+<div class="promo visible-phone">
+        <div class="span3 "><h4>Learn to play</h4><p>This tutorial will teach you the basics of Clusterflux in 5 easy steps. These steps can be brought up any time during gameplay and on the game board you can get additional hints by clicking 'help'.
+        </p></div>
+        
+    
+        <div class="span3 "><h4>Placement</h4><p>When you want to place a card on the battlefield you need to have the card´s upkeep in mind. The combined upkeep of all the cards on the field can not exceed your maximum flux capacity. <br/><br/>
+        If the maximum flux capacity is to low to support such a card, it is considered 'Collapsed' and can not attack/entrench or use effects. The card can be placed face-up for attack or face-down for effects.  
+        </p></div>
+
+        <div class="span3 "><h4>Flipping</h4><p>When a unit card has survived one turn on the field face-down it can be flipped. If it has a flip effect it is activated automatically.
+        </p></div>
+      
+        <div class="span3 "><h4>Entrench</h4><p>To entrench a unit and expand your maximum flux capacity, simply click the card and then an empty slot in your trench.<br/><br/>This must be done in the entrench phase.<br/><br/>
+        Once a unit card has been put in the trench it can not be retrieved to the battlefield in any way.</p></div>
+   
+        <div class="span3 "><h4>Combat</h4><p>The most important thing in combat is that if your units attack is higher than the target units defense (after modifiers) the opponents unit is destroyed. If your attack isn't strong enough to penetrate the defense your unit is destroyed instead.<br/><br/><b>Type A:</b> Click your unit, then select your opponents face-down card, press 'add to plan' and finally attack. This is called a probe-attack, if the enemy unit have any probe effect it is activated. Then battle is calculated as normal.
+        <br/><br/><b>Type B:</b> Click your attacking unit, select your opponents card, then press 'add to plan' and finally attack. Battle is calculated as normal.
+        </p></div>
+
+        <div class="span3 "><h4>Piercing</h4><p>When declaring a Type 2 attack you have the option to select an additional entrenched card on your opponents side of the battlefield -now, if you manage to destroy your opponents unit the charge will continue onto that trench card. The opposing units defense is subtracted from your unit cards attack and what remains is calculated against the entrenched cards defense.
+        When a player have no Flux left he/she has lost the game.
+        </p></div>
+
+        <div class="span3">
+            <h4>Phases</h4>
+            <ul>
+                <li>Draw phase - You automatically draw a card from your deck.</li>
+                <li>Entrench phase - Decide if you want to entrench any of your units.</li>
+                <li>Flip phase - Decide which face-down cards to flip.</li>
+                <li>Deploy phase - Place new units.</li>
+                <li>Combat phase - Declare attacks.</li>
+                <li>End phase - End your turn.</li>
+            </ul>
+        </div>
+
+        <div class="span3 "><br/><br/><br/><p>There are a fixed number of phases for every turn of the game. If you attempt to perform an action in the wrong phase it might not get recognized or it may skip some of the phases you missed, therefore it is important to know the order of the phases.
+        </p></div>
+        
+        
+</div>
+</div>
+
+<div class="span2"></div>

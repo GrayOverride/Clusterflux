@@ -1,0 +1,1 @@
+$('.label-with-popover').popover(placement: 'right') # Note: 'right' is default

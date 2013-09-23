@@ -1,0 +1,43 @@
+<%= form_for @effect, :url => @path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+	<% if @effect.errors.any? %>
+		<div class="error_messages">
+			<h3>Submission failed</h3>
+			<ul>
+				<% for message in @effect.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="control-group">
+		<%= f.label :name, "Name", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :name, :class =>'input-small', :placeholder=>'Effect name'   %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :etype, "Type", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select :etype, [['Select Type', nil], ['Scout', 'scout'], ['Flip', 'flip'], ['Deploy', 'deploy'], ['Passive', 'passive']] %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :effect, "Effect (Category)", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select :effect, [['Select Effect', nil], ['Draw', 'draw'], ['Atk', 'atk'], ['Def', 'def'], ['Atk & Def', 'atk_def'], ['Immortal', 'immortal'], ['Disable', 'disable'], ['Hidden', 'hide'], ['Discard from hand', 'discard'], ['Return to deck', 'return'], ['Coward', 'coward'], ['Defector', 'defector']] %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :amount, :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :amount, :class =>'input-small', :placeholder=>'Amount (if applicable)' %>
+			<p>If double the value set to 100, if half the value set to 50</p>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<%= f.submit "Submit", :class=>"btn btn-inverse" %>
+		</div>
+	</div>
+	
+<% end %>

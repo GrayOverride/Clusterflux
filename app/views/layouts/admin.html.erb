@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clusterflux - Administration</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= yield(:head) %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body id="admin-body">
+
+
+<div class="container-fluid">
+	<div class="navbar row-fluid">
+	  	<div class="navbar-inner">
+		    <div id="logo" class="visible-desktop brand "><%= image_tag("logo.png", :alt => "Clusterflux", :size => "96x96") %>
+		    </div>
+		    <ul class="nav">
+		      <li><%= link_to "Home", admin_home_path %> </li>
+		      <li><%= link_to "News", admin_updates_path %> </li>
+		      <li><%= link_to "Cards", admin_cards_path %> </li>
+		      <li><%= link_to "Effects", admin_effects_path %></li>
+		      <li><%= link_to "Decks", admin_decks_path %></li>
+		      <li><%= link_to "Users", admin_players_path%></li>
+		      <li><%= link_to "Admins", admin_users_path %> </li>
+		    </ul>	
+			<%= link_to "Logout", admin_log_out_path, :class=>"btn btn-inverse pull-right" %>
+		</div>
+	</div>
+	<div id="admin_cont" class="row-fluid">
+	    <%= yield %>
+	</div>
+</div>
+
+
+
+</body>
+</html>

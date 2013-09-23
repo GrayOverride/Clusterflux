@@ -1,0 +1,23 @@
+<%= form_for(@admin_update) do |f| %>
+  <% if @admin_update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_update.errors.count, "error") %> prohibited this admin_update from being saved:</h2>
+
+      <ul>
+      <% @admin_update.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :title, :class =>'input-medium', :placeholder=>'Title' %><br />
+  </div>
+  <div class="field">
+    <%= f.text_area :desc, :rows => "5", :class =>'input-medium', :placeholder=>'Text' %><br />
+  </div>
+  <div class="actions">
+    <%= f.submit "Save", :class=>"btn btn-inverse"  %>
+  </div>
+<% end %>

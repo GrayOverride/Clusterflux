@@ -1,0 +1,240 @@
+<%= subscribe_to "/board/" + @server.key %>
+<%= subscribe_to "/board/" + @server.key + "/" + @player %>
+<%= subscribe_to "/board/" + @server.key + "/opponent/" + @player %>
+		
+<div class="row-fluid">
+	<div class="row-fluid">
+		<div class="span4">
+			<h1 id="game-title" data-key="<%= @server.key %>" data-player="<%= @player %>" data-faction="<%= @faction %>"><%= @server.name %></h1>
+		</div>
+		<div class="span8">
+			<div class="span9">
+				<div class="pull-right">
+					<button type="button" class="btn-inverse btn", id="overlay">Help</button>
+					<%= link_to "Tutorial", home_tutorial_path, :class => "btn-inverse btn", :target => "_blank" %>
+					<%= link_to "Report Bug", "https://docs.google.com/forms/d/1ode4mbLp2oQToKkeWSGuHbzj1eFMxLUcBBWKhkTXUk8/viewform", :class => "btn-inverse btn", :target => "_blank" %>
+					<%= link_to "Quit", game_servers_path, :class=>"btn btn-danger", :data => {"intro" => "Exit the game", "data-position" => "bottom"} %>
+				</div>
+			</div>
+			<div class="span3" id="music-player">
+				<div class="pull-right">
+					<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+					<div id="jp_container_1" class="jp-audio row-fluid">
+						<div class="jp-type-single row-fluid span12">
+							<div class="jp-gui jp-interface span12">
+								<div class="span12">
+		    						<ul class="jp-controls">
+		    							<li><button type="button" class="jp-play btn btn-inverse btn-small" tabindex="1"><i class="icon-play icon-white"></i></button></li>
+										<li><button type="button"  class="jp-stop btn btn-inverse btn-small" tabindex="1"><i class="icon-stop icon-white"></i></button></li> 
+										<li>
+											
+											<div class="jp-volume-bar">
+		  										<div class="jp-volume-bar-value"></div>
+											</div>
+										</li> 
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div id="board" class="span6" >	
+		<div class="row-fluid">
+			<div id="opponent-energy">
+				<div class="span1"></div>
+				<div class="slot-wrapper span2">
+					<div class="op-deployed-slot well span12 slot" data-slot="1">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-deployed-slot well span12 slot" data-slot="2">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-deployed-slot well span12 slot" data-slot="3">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-deployed-slot well span12 slot" data-slot="4">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-deployed-slot well span12 slot" data-slot="5">
+					</div>
+				</div>
+				<div class="span1"></div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div id="opponent-units">
+				<div class="slot-wrapper span2">
+					<div class="op-unit-slot well span12 slot" data-slot="1">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-unit-slot well span12 slot" data-slot="2">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-unit-slot well span12 slot" data-slot="3">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-unit-slot well span12 slot" data-slot="4">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-unit-slot well span12 slot" data-slot="5">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="op-unit-slot well span12 slot" data-slot="6">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div id="player-units">
+				<div class="slot-wrapper span2">
+					<div class="unit-slot well span12 slot" data-slot="1" data-intro="Deployment slot, place cards here to bring them into play" data-position="top">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="unit-slot well span12 slot" data-slot="2">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="unit-slot well span12 slot" data-slot="3">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="unit-slot well span12 slot" data-slot="4">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="unit-slot well span12 slot" data-slot="5">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="unit-slot well span12 slot" data-slot="6">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div id="player-energy">
+				<div class="span1"></div>
+				<div class="slot-wrapper span2">
+					<div class="deployed-slot well span12 slot" data-slot="1" data-intro="Trench slot, entrench units in order to get more flux" data-position="bottom">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="deployed-slot well span12 slot" data-slot="2">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="deployed-slot well span12 slot" data-slot="3" data-intro="HQ, it gives you your initial flux" data-position="bottom">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="deployed-slot well span12 slot" data-slot="4">
+					</div>
+				</div>
+				<div class="slot-wrapper span2">
+					<div class="deployed-slot well span12 slot" data-slot="5">
+					</div>
+				</div>
+				<div class="span1"></div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="span6">
+		<div class="row-fluid">
+			<div class="pull-left">
+				<button type="button" class="btn-success btn-large", id="ready" data-intro="When you're ready, press this" data-position="left">Ready</button>
+			</div>
+		</div>
+
+		<div class="row-fluid" id="opponent-side">
+			<div id="opponent-hand" class="span8" >
+			</div>
+			
+			<div id="opponent-deck" class="span2">
+				<img src="/assets/placeholder.png" />
+			</div>
+
+			<div id="opponent-graveyard" class="span2">
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div id="button-row" class="span12">
+				<div class="pull-right">
+					<button type="button" class="btn-inverse btn-large", id="commit-queue" data-intro="Add attack to your combat plan" data-position="left">Add to plan</button>
+					<button type="button" class="btn-inverse btn-large", id="attack-target" data-intro="Execute your combat plan" data-position="top">Attack</button>
+					<button type="button" class="btn-inverse btn-large", id="end-turn" data-intro="End your turn" data-position="top">End Turn</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-fluid energy-counter">
+			<div class="span12">
+				<h4 id="player-energy">Upkeep/Fluxcapacity: <span>0/0</span></h4>
+			</div>
+		</div>
+
+		<div class="row-fluid" id="player-side">
+			<div class="row-fluid turn-enable">
+				<div class="span1"></div>
+				<div id="phases" class="span10 turn-phases" data-intro="When it's your turn, this shows which phase you're at. Remember, you can only go forward in phases." data-position="bottom">
+					<span class="span2">Draw</span>
+					<span class="span3">Entrench</span>
+					<span class="span2">Flip</span>
+					<span class="span2">Deploy</span>
+					<span class="span3">Combat</span>
+				</div>
+				<div id="not-my-turn" class="span10 turn-phases-disabled turn-phases">
+					<span class="span12">It is not your turn!</span>
+				</div>
+				<div class="span1"></div>
+			</div>
+			
+			<div class="row-fluid">
+				<div id="player-hand" class="span8">
+				</div>
+			
+				<div id="player-deck" class="span2">
+					<img src="/assets/placeholder.png" data-intro="My deck" data-position="bottom" />
+				</div>
+
+				<div id="player-graveyard" class="span2">
+				</div>
+			</div>
+		</div>
+
+		<div id="messenger" class="row-fluid">
+			<div class="row-fluid">
+				<div id="chat" class="span12 well"></div>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span12" data-intro="Chat with your opponent" data-position="left">
+					<%= form_tag("", :class => "form-inline") do %>
+					  <%= text_field_tag :message, nil, :placeholder => "Write a message", :class => "span10", :autocomplete => "off" %>
+					  <%= submit_tag("Send", :id => "chat-send", :class => "btn btn-primary span2 ") %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

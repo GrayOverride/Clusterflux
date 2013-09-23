@@ -1,0 +1,104 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag 'game/apprise-v2.min.js' %>
+	<%= javascript_include_tag 'user/decks' %>
+	<%= stylesheet_link_tag 'game/apprise-v2.min.css.scss', :media => "all"  %>
+<% end %>
+
+<div class="span1"></div>
+<div id="cont" class="row-fluid span10 well">
+	<div class="span6 well">
+		<h2 id="deck-creator" data-user="n">Create a Deck</h2>
+		
+		<h3>Available headquarters</h3>
+		<div class="row-fluid">
+			<ul class="thumbnails" id="headquarters">
+				<% @headquarters.each_with_index do |card, index| %>	
+					<li class="span4" data-cid="<%= card.id %>">
+						<div class="thumbnail">
+							<%= image_tag card.avatar.url %>
+							<table class="table table-hover table-condensed">
+								<tr><td><b><%= card.name %> - <%= card.faction.name %></b></td><td></td></tr>
+								<tr><td>Attack</td><td><%= card.atk %></td></tr>
+								<tr><td>Defence</td><td><%= card.def %></td></tr>
+								<tr><td>Flux</td><td><%= card.energy %></td></tr>
+								<tr><td>Upkeep</td><td><%= card.upkeep %></td></tr>
+							</table>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+
+		<h3>Available cards</h3>
+		<div class="row-fluid">
+			<ul class="thumbnails" id="available">
+				<% @cards.each_with_index do |card, index| %>	
+					<li class="span4" data-cid="<%= card.id %>">
+						<div class="thumbnail">
+							<%= image_tag card.avatar.url %>
+							<table class="table table-hover table-condensed">
+								<tr><td><b><%= card.name %> - <%= card.faction.name %></b></td><td></td></tr>
+								<tr><td>Attack</td><td><%= card.atk %></td></tr>
+								<tr><td>Defence</td><td><%= card.def %></td></tr>
+								<tr><td>Flux</td><td><%= card.energy %></td></tr>
+								<tr><td>Upkeep</td><td><%= card.upkeep %></td></tr>
+								<tr><td>Probe effect</td><td></td></tr>
+								<tr><td colspan="2"><%=raw effect_builder(card.scout) %></td></tr>
+								<tr><td>Flip effect</td><td></td></tr>
+								<tr><td colspan="2"><%=raw effect_builder(card.flip) %></td></tr>
+							</table>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<div class="span6 well">
+		<input id="deck_id" name="deck_id" type="hidden" value="<%= @deck.id %>" />
+		<%= text_field_tag 'deck_name', nil, :value => @deck.name %>
+		<button id="save" class="btn btn-inverse pull-right">Save deck</button>
+
+		<h3>Selected headquarters</h3>
+		<div class="row-fluid">
+			<ul class="thumbnails" id="selected-hq">
+				<li class="span4" data-cid="<%= @hq.id %>">
+					<div class="thumbnail">
+						<%= image_tag @hq.avatar.url %>
+						<table class="table table-hover table-condensed">
+							<tr><td><b><%= @hq.name %> - <%= @hq.faction.name %></b></td><td></td></tr>
+							<tr><td>Attack</td><td><%= @hq.atk %></td></tr>
+							<tr><td>Defence</td><td><%= @hq.def %></td></tr>
+							<tr><td>Flux</td><td><%= @hq.energy %></td></tr>
+							<tr><td>Upkeep</td><td><%= @hq.upkeep %></td></tr>
+						</table>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="selected-cards">Selected cards <span>0/39</span></h3>
+		<div class="row-fluid">
+			<ul class="thumbnails" id="selected">
+				<% @selected.each_with_index do |c, index| %>	
+					<li class="span4" data-cid="<%= c.id %>">
+						<div class="thumbnail">
+							<%= image_tag c.avatar.url %>
+							<table class="table table-hover table-condensed">
+								<tr><td><b><%= c.name %> - <%= c.faction.name %></b></td><td></td></tr>
+								<tr><td>Attack</td><td><%= c.atk %></td></tr>
+								<tr><td>Defence</td><td><%= c.def %></td></tr>
+								<tr><td>Flux</td><td><%= c.energy %></td></tr>
+								<tr><td>Upkeep</td><td><%= c.upkeep %></td></tr>
+								<tr><td>Probe effect</td><td></td></tr>
+								<tr><td colspan="2"><%=raw effect_builder(c.scout) %></td></tr>
+								<tr><td>Flip effect</td><td></td></tr>
+								<tr><td colspan="2"><%=raw effect_builder(c.flip) %></td></tr>
+							</table>
+						</div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="span1"></div>

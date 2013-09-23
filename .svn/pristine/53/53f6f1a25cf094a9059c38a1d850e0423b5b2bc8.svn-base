@@ -1,0 +1,27 @@
+#public-body{
+	background: url('back.png') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+#blog {
+	border-color:black;
+}
+
+.nav > li > form {
+	margin: 0;
+}
+
+#log-in-form{
+	margin: 0;
+	margin-top: 5px;
+}
+
+#log-in-form input{
+	margin: 0 auto;
+}
+
+#login-name{color:#777777;}

@@ -1,0 +1,39 @@
+<% content_for(:head) do %>
+	<%= javascript_include_tag 'game/apprise-v2.min.js' %>
+	<%= stylesheet_link_tag 'game/apprise-v2.min.css.scss', :media => "all"  %>
+<% end %>
+
+<div class="span2"></div>
+<div id="startup" class="span8 well">
+	<h2>Create a new game</h2>
+	<%= form_for(@server, :as => :server, :url => game_servers_path) do |f| %>
+	<% if @server.errors.any? %>
+	<div class="error_messages">
+		<h3>The game could not be started</h3>
+		<ul>
+			<% for message in @server.errors.full_messages %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	<%= notice %>
+	<div class="control-group">
+		<%= f.text_field :name, :class =>'input-medium', :placeholder=>'Server Name' %>
+	</div>
+	
+	<div class="control-group">
+		<div class="controls">
+			<%#= f.select(:id, @decks.collect{|d| [d.name, d.id]}, {:prompt => 'Deck'}, :class =>'input-medium') %>
+			<%= select_tag "deck", options_from_collection_for_select(@decks, "id", "name"), :prompt => "Select a deck", :class => "input-medium" %>
+		</div>
+	</div>
+
+	<div class="control-group">
+		<%= f.submit "Launch", :class=>"btn btn-large btn-success", :id => "create-game" %>
+	</div>
+	<% end %>
+
+	<%= link_to "Back", game_servers_path, :class=>"btn btn-inverse"%>
+</div>
+<div class="span2"></div>

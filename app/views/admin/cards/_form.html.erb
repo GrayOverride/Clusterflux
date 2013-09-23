@@ -1,0 +1,86 @@
+<%= form_for @card, :url => @path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+	<% if @card.errors.any? %>
+		<div class="error_messages">
+			<h3>Submission failed</h3>
+			<ul>
+				<% for message in @card.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="control-group">
+		<%= f.label :name, "Name", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :name, :class =>'input-small', :placeholder=>'Card Name'   %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :type_id, "Type", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select(:type_id, ::Type.all.collect{|t| [t.name, t.id]}, {:prompt => 'Pick type'}, :class =>'input-small') %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :faction_id, "Faction", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select(:faction_id, ::Faction.all.collect{|fa| [fa.name, fa.id]}, {:prompt => 'Pick faction'}, :class =>'input-small') %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :atk, "Attack", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :atk, :class =>'input-small', :placeholder=>'Atk' %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :def, "Defence", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :def, :class =>'input-small', :placeholder=>'Def' %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :energy, "Energy", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :energy, :class =>'input-small', :placeholder=>'Energy' %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :upkeep, "Upkeep", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :upkeep, :class =>'input-small', :placeholder=>'Upkeep' %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :gank, "Gank", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :gank, :class =>'input-small', :placeholder=>'Gank' %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :Avatar, "Avatar", :class => "control-label" %>
+		<div class="controls">
+		 <%= f.file_field :avatar %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :scout_id, "On scout", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select(:scout_id, ::Effect.where("etype = 'scout'").collect{|s| [s.name, s.id]}, {:prompt => 'Scout effect', :include_blank => true}, :class =>'input-medium') %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :flip_id, "On flip", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select(:flip_id, ::Effect.where("etype = 'flip'").collect{|s| [s.name, s.id]}, {:prompt => 'Flip effect', :include_blank => true}, :class =>'input-medium') %>
+		</div>
+	</div>
+
+
+	<div class="control-group">
+		<div class="controls">
+			<%= f.submit "Submit", :class=>"btn btn-inverse" %>
+		</div>
+	</div>
+	
+<% end %>

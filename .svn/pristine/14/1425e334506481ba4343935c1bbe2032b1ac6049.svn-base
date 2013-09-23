@@ -1,0 +1,12 @@
+<h1>Admin Mainpage</h1>
+
+
+<div class="media">
+<a class="pull-center" href="http://digitaldeadlock.com/">
+</a>
+
+<div class="media-body">
+<h4 class="media-heading">Be Cool</h4>
+<%= link_to "Site News", admin_updates_path, :class=>"btn btn-inverse"%>
+
+</div>
