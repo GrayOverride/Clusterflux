@@ -21,8 +21,8 @@ test:
 production:
   adapter: postgresql
   database: main
-  username: monitor
-  password: massekaffe
+  username: monitoria
+  password: TestTest
   host: localhost
   port: 5432
   pool: 15
