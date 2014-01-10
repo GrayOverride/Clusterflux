@@ -1,6 +1,6 @@
 TODO!
 
-Playernames ingame <br>
-comprimera kort<br>
-Auto Server wipe<br>
-remaining deckcount ingame<br>
+Playernames ingame <br/>
+comprimera kort<br/>
+Auto Server wipe<br/>
+remaining deckcount ingame<br/>
