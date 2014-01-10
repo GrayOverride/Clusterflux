@@ -1,7 +1,7 @@
 <h1>TODO</h1>
 
 Spelarnas namn på spelplan <br />
-Komprimera korten <br />
+Komprimera korten &#x2713;<br />
 Återstående kort i leken<br />
 Validera kod och testa
 
