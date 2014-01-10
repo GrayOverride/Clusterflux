@@ -1,6 +1,6 @@
-TODO!
+<h1>TODO</h1>
 
-Playernames ingame -
-comprimera kort -
-Auto Server wipe -
-remaining deckcount ingame -
+Playernames ingame <br
+comprimera kort <br>
+Auto Server wipe <br>
+remaining deckcount ingame <br>
